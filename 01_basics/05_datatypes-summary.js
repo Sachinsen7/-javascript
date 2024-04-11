@@ -41,3 +41,27 @@ console.log(typeof outsideTemp);
 console.log(typeof myFunction);  
 console.log(typeof heros);
 
+
+// ************************************
+
+// Stack(Primitive), Heap(Non Primitive)
+let myName = "Sachinsen"
+
+let anothername = myName
+anothername = "Qaransen"
+
+console.log(myName);
+console.log(anothername);
+
+let userOne = {
+    email: "stannisbaratheon@google.com",
+    upi: "user@ybl"
+}
+
+let userTwo = userOne
+
+userTwo.email = "albusseverus@google.com"
+
+console.log(userOne.email);
+console.log(userTwo.email);
+
