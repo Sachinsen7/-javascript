@@ -30,8 +30,12 @@ const url = "https://Sachin.com/Sachin%20sen"
 
 console.log(url.replace('%20', '-'));
 
-console.log(url.includes('Qaran'));
+console.log(url.includes('Qaran'));    /* It Shows via True/False that word contains in URL or Not */
 console.log(url.includes('Sachin'));
+console.log(url.includes("Sachin"));
 
 console.log(gameName.split('-'));
-console.log(gameName);
+console.log(gameName.split(' '));
+console.log(gameName.split(''));
+console.log(gameName.split());
+
