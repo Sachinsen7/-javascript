@@ -4,8 +4,8 @@ const score = 400
 const balance = new Number(100)
 // console.log(balance);
 
-// console.log(balance.toString().length);
-// console.log(balance.toFixed(2));
+console.log(balance.toString().length);
+console.log(balance.toFixed(2));
 
 const otherNumber = 1253.9954
 
@@ -19,17 +19,24 @@ const hundreds = 1000000
 //+++++++++++++ Maths ++++++++++++++
 
 console.log(Math);
-// console.log(Math.abs(-4));
-// console.log(Math.round(4.9));
-// console.log(Math.ceil(4.9));
-// console.log(Math.floor(4.9));
+// console.log(Math.abs(-4));     /* absolute value minus to plus or plus to plus */
+// console.log(Math.round(4.9));  /* round off that closes to number */
+// console.log(Math.ceil(4.9)); /* Top number */
+// console.log(Math.floor(4.9)); /* lowest number 8/
 
-// console.log(Math.min(4, 5, 0, 9));
-// console.log(Math.max(4, 8, 6, 7));
+// console.log(Math.min(4, 5, 0, 9));   /* Minimum value 
+// console.log(Math.max(4, 8, 6, 7)); /* Maximum value */
 
 console.log(Math.random());
 console.log((Math.random()*10) + 1);
-console.log((Math.random()*10) + 1);
+console.log(Math.ceil
+(Math.random()*10) + 1); 
+
+const min = 10
+const max = 20
+
+console.log(Math.floor(Math.random() * (max - min + 1)) + min)
+
 
 
 
