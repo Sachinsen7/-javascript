@@ -1,11 +1,11 @@
-#Projects related to DOM
+# Projects related to DOM
 
 ## project link
 [Click here](https://stackblitz.com/edit/stackblitz-starters-whv7zt?file=01_colorChanger%2Findex.html)
 
-##Solution Code
+## Solution Code
 
-##Project1
+## Project1
 
 ```javascript
 console.log("Sachin")
