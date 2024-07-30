@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <h2>Amazing Images</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="social-media" src="https://images.pexels.com/photos/5081423/pexels-photo-5081423.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="pexels"></li>
+            <li><img width="200px" id="nature" src="https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></li>
+            <li><img width="200px" id="flowers" src="https://images.pexels.com/photos/1408221/pexels-photo-1408221.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></li>
+            <li><img width="200px" id="cube" src="https://images.pexels.com/photos/5011647/pexels-photo-5011647.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""></li>
+            <li><img width="200px" id="car" src="https://images.pexels.com/photos/733745/pexels-photo-733745.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""></li>
+            <li><a style="color: aliceblue;" href="http://google.com" id="google">Google</a></li>
+        
+        </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById('cube').onclick = function(){
+    //     alert("cube clicked")
+    // }
+    // attachEvent()
+    // jQuery - on
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // document.getElementById('cube').addEventListener('click', function(){
+    //     alert("cube Clicked again")
+    // }, false);
+    
+    // document.getElementById('images').addEventListener('click', function(){
+    //     alert("Clicked inside the ul")
+    // }, false);
+    
+    // document.getElementById('cube').addEventListener('click', function(){
+    //     alert("Cube Clicked")
+    //     e.stopPropagation()
+    // }, false);
+
+    // // if you are using true => capturing
+    // // if you are using false => bubbling
+
+    // document.getElementById('google').addEventListener('click', function(e){
+    //     alert("Google Clicked");
+    //     e.preventDefault() // To prevent default action
+    //     e.stopPropagation() // To avoid Bubbling
+    // }, false);   
+
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log(e);
+        console.log(e.target); // e.target => gives you full details!
+        console.log(e.target.tagName);
+        if (e.target.tagName === 'IMG' ) {
+            console.log(e.target.parentNode);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+        
+        // removeIt.parentNode.removeChild(removeIt)
+    }, false);
+
+</script>
+</html>
