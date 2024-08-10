@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .card{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 700px;
+        width: 800px;
+        background-color: #a7ece1;
+
+    }
+
+    #button {
+        height: 50px;
+        width: 100px;
+        background-color: rgb(199, 243, 4);
+        color: black;
+        border: '2px solid black';
+        border-radius: 5px;
+        position: absolute;
+        bottom: 10px;
+        transform: translateX(-50%);
+    }
+
+    #followers {
+        /* align-self: last baseline; */
+        /* margin-top: 100px; */
+        color: rgb(2, 9, 37);
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    #login {
+        color: black;
+        font-size: 30px;
+        font-weight: bold;
+
+    }
+</style>
+<body style="background-color: #212121; color: #fff;">
+    <div class="card">
+        <p id="login"></p>
+        <p id="followers"></p>
+        <button id="button">Click Me!</button>
+    </div>
+    <p>
+        0	UNSENT	Client has been created. open() not called yet.
+        1	OPENED	open() has been called.
+        2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+        3	LOADING	Downloading; responseText holds partial data.
+        4	DONE	The operation is complete.
+    </p>
+</body>
+<script>
+    // const requestUrl = 'https://api.github.com/users/Sachinsen7'
+    // const xhr = new XMLHttpRequest()
+    // xhr.open('GET', requestUrl)
+    // xhr.onreadystatechange = function (){
+    //     console.log(xhr.readyState);
+    //     if (xhr.readyState === 4) {
+    //         const data = JSON.parse(this.responseText)
+    //         console.log(typeof data);
+    //         console.log(data.followers);
+    //     }
+    // }
+    // xhr.send()
+
+    const card = document.querySelector('.card')
+    const button = document.getElementById('button')
+    const followers = document.getElementById('followers')
+    const login = document.getElementById('login')
+    const hiteshGithub = 'https://api.github.com/users/hiteshchoudhary'
+    const hiteshImage = 'https://avatars.githubusercontent.com/u/11613311?v=4'
+
+    let imageLoaded =false;
+    let gitHubDataLoaded = false;
+
+    const xhrNew1 = new XMLHttpRequest()
+    const xhrNew2 = new XMLHttpRequest()
+
+
+    function checkBothLoaded(){
+        if (imageLoaded && gitHubDataLoaded) {
+            console.log("Both Requests are completed successfully");
+            
+        }
+    }
+    
+    // for image
+    xhrNew1.responseType = 'blob'
+    xhrNew1.open('GET', hiteshImage)
+    // for both
+        xhrNew1.onload = function(){
+            console.log(xhrNew1.status);
+            if (xhrNew1.status === 200) {
+                // create URL
+                let Url = URL.createObjectURL(xhrNew1.response)
+
+                // create element
+                let img = document.createElement('img')
+                img.src = Url;  
+                console.log("Wallah Image Show Ho Gyi");
+                
+                // inserting
+                card.innerHTML = "";
+                card.appendChild(img)
+
+                img.style.height = '400px';
+                img.style.width = '400px';
+                
+                card.appendChild(login)
+                card.appendChild(followers);
+                imageLoaded = true;
+                checkBothLoaded();
+
+                
+            }
+        }
+
+        xhrNew2.open('GET', hiteshGithub)
+        xhrNew2.onreadystatechange = function(){
+            
+            console.log(xhrNew2.readyState)
+            if (xhrNew2.readyState === 4) {
+                const myData = JSON.parse(this.responseText)
+                console.log(typeof myData);
+                console.log(myData.followers);
+                console.log(myData.login);
+
+                login.innerHTML = myData.login
+                login.innerHTML = `Username: ${myData.login}`
+                followers.innerHTML = myData.followers
+                followers.innerHTML = `Followers: ${myData.followers}`
+                
+                gitHubDataLoaded = true;
+                checkBothLoaded();
+                
+                
+            }
+
+        }
+
+    button.addEventListener('click', function(){
+        xhrNew1.send()
+        xhrNew2.send()
+    })
+
+</script>
+</html>
