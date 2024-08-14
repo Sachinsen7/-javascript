@@ -86,17 +86,25 @@ consumePromiseFive()
 
 
 
-// const promiseSix = new Promise(function(resolve, reject){
-//     setTimeout(function(){
-//         console.log("Mera selsction ho gya");
-        
-//         resolve()
-//     } ,1000)
-// })
+const promiseSix = new Promise(function(resolve, reject){
+    setTimeout(function(){
+        console.log("Mera selsction ho gya");
+        let error = false;
+        if (!error){
+            resolve({
+                user: "Sachin",
+                Email: "sachinsen1920@gmail.com"
+            })
+        } else {
+            reject("error:  something went wrong")
+        }
+            
+    } ,1000)
+})
 
-// promiseSix.then(function(){
-//     console.log("Mera Nhi huaa")
-// })
+promiseSix.then(function(){
+    console.log("Mera Nhi huaa")
+})
 
 // Method 1
 
@@ -130,3 +138,8 @@ fetch('https://api.github.com/users/hiteshchoudhary')
 }).then((data) => {
     console.log(data);
 }).catch((error) => console.log("error"))
+
+
+
+    
+
