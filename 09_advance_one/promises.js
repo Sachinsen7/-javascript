@@ -17,6 +17,7 @@ new Promise(function(resolve, reject){
     setTimeout(function(){
         console.log("Async task 2");
         resolve()
+        
     }, 1000)
 }).then(function(){
     console.log("Async 2 Resolved");
@@ -103,7 +104,7 @@ const promiseSix = new Promise(function(resolve, reject){
 })
 
 promiseSix.then(function(){
-    console.log("Mera Nhi huaa")
+    console.log("Mera Nhi huaa!")
 })
 
 // Method 1
