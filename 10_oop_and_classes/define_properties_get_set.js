@@ -27,3 +27,5 @@ function User(email, password){
 const sayMyName = new User("walter@white.com", "Heisenberg")
 
 console.log(sayMyName.email);
+console.log(sayMyName.password);
+
