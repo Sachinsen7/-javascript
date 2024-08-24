@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lexical</title>
+</head>
+<body>
+    <h1>Lexical scoping</h1>
+</body>
+    <script>
+        function outer(){
+            let name = "sachin"
+            // console.log("Outer", secret);
+            
+            function inner(){
+                let secret = "qwerty123"
+                console.log("inner", name);
+                
+            }
+            function innerTwo(){
+                console.log("inner two", name);
+                console.log(secret);
+                
+                
+            }
+            inner()
+            innerTwo()
+        }
+        outer()
+        // console.log("outer" , name)
+    </script>
+</html>
