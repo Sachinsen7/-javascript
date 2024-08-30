@@ -1,17 +1,25 @@
+//while loop
 
-// let index = 0
-// while (index <= 10) {
-//     console.log(`Value of index is ${index}`);
-//     index = index + 2
-// }
+
+let index = 0
+while (index <= 10) {
+    console.log(`Value of index is ${index}`);
+    // index = index + 2
+    index = index + 3
+}
 
 let myArray = ['Batman', 'Superman', 'Aquaman']
 
 let arr = 0
 while (arr < myArray.length) {
-    // console.log(`Value is ${myArray[arr]}`);
+    console.log(`Value is ${myArray[arr]}`);
     arr = arr + 1
 }
+
+// console.log(arr);
+
+//do while
+
 
 let score = 11
 

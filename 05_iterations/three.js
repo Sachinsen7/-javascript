@@ -6,7 +6,7 @@
 const arr = [1, 2, 3, 4]
 
 for (const num of arr) {
-    // console.log(num);
+    console.log(num);
     
 }
 
@@ -24,7 +24,7 @@ map.set('IN', "INDIA")
 map.set('US', "UNITED STATEs OF AMERICA")
 map.set('FR', "FRANCE")
 
-// console.log(map);
+console.log(map);
 
 for (const [key, value] of map) {
     console.log(key, ':-', value);

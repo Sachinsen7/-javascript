@@ -4,11 +4,11 @@ const isUserLoggedIn = true
 const temperature = 41
 
 
-// if (2 == 3){
-//     console.log("executed");
-// } else {
-//     console.log("wrong");
-// }
+if (2 == 3){
+    console.log("executed");
+} else {
+    console.log("wrong");
+}
 
 
 // if (temperature == 30){
